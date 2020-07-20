@@ -1,0 +1,23 @@
+{
+  "name": "cesium-workshop",
+  "version": "1.5.0",
+  "description": "A simple JavaScript app with with Cesium, the open-source WebGL virtual globe and map engine.",
+  "homepage": "http://cesium.com",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CesiumGS/cesium-workshop"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.691.0",
+    "compression": "^1.6.2",
+    "const": "^1.0.0",
+    "express": "^4.15",
+    "request": "^2.79.0",
+    "request-promise": "^4.2.5",
+    "yargs": "^15.3.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
