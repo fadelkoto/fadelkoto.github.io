@@ -267,7 +267,14 @@
                 // Adjust the vertical origin so pins sit on terrain
                 entity.billboard.verticalOrigin = Cesium.VerticalOrigin.CENTER;
                 // Disable the labels to reduce clutter
-				
+				// entity.label = undefined;
+				Cesium.Label.enableRightToLeftDetection = true;
+				var myLabelEntity = viewer.entities.add({
+					label: {
+						id: 'my label',
+						text: 'זה טקסט בעברית \n ועכשיו יורדים שורה',
+					}
+				});
                 // Add distance display condition
                 entity.billboard.distanceDisplayCondition = new Cesium.DistanceDisplayCondition(10.0, 20000.0);
                 // Compute latitude and longitude in degrees
@@ -275,7 +282,7 @@
                 var latitude = Cesium.Math.toDegrees(cartographicPosition.latitude);
                 var longitude = Cesium.Math.toDegrees(cartographicPosition.longitude);
                 // Modify description
-                var description = '<table class="cesium-infoBox-defaultTable cesium-infoBox-defaultTable-lighter"><tbody>' + '<br><tbody>hhhh</tbody><br><br>'  +
+                var description = '<table class="cesium-infoBox-defaultTable cesium-infoBox-defaultTable-lighter"><tbody>' +
                     '<tr><th>' + "Longitude" + '</th><td>' + longitude.toFixed(5) + '</td></tr>' +
                     '<tr><th>' + "Latitude" + '</th><td>' + latitude.toFixed(5) + '</td></tr>' +
                     '</tbody></table>';
