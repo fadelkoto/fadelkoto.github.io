@@ -196,7 +196,8 @@
         requestVertexNormals : true // required for terrain lighting
     });
     // Enable depth testing so things behind the terrain disappear.
-    viewer.scene.globe.depthTestAgainstTerrain = true;
+    viewer.scene.globe.depthTestAgainstTerrain = false;
+	
 
     //////////////////////////////////////////////////////////////////////////
     // Configuring the Scene
@@ -235,7 +236,7 @@
     viewer.clock.startTime = Cesium.JulianDate.fromIso8601("2020-07-23T11:00:00Z");
     viewer.clock.stopTime = Cesium.JulianDate.fromIso8601("2020-07-23T11:20:00Z");
     viewer.clock.currentTime = Cesium.JulianDate.fromIso8601("2020-07-23T11:00:00Z");
-    viewer.clock.multiplier = 2; // sets a speedup
+    viewer.clock.multiplier = 3; // sets a speedup
     viewer.clock.clockStep = Cesium.ClockStep.SYSTEM_CLOCK_MULTIPLIER; // tick computation mode
     viewer.clock.clockRange = Cesium.ClockRange.LOOP_STOP; // loop at the end
     viewer.timeline.zoomTo(viewer.clock.startTime, viewer.clock.stopTime); // set visible range
@@ -268,15 +269,9 @@
                 entity.billboard.verticalOrigin = Cesium.VerticalOrigin.CENTER;
                 // Disable the labels to reduce clutter
 				// entity.label = undefined;
-				Cesium.Label.enableRightToLeftDetection = true;
-				var myLabelEntity = viewer.entities.add({
-					label: {
-						id: 'my label',
-						text: 'זה טקסט בעברית \n ועכשיו יורדים שורה',
-					}
-				});
+				
                 // Add distance display condition
-                entity.billboard.distanceDisplayCondition = new Cesium.DistanceDisplayCondition(10.0, 20000.0);
+                //entity.billboard.distanceDisplayCondition = new Cesium.DistanceDisplayCondition(10.0, 20000.0);
                 // Compute latitude and longitude in degrees
                 var cartographicPosition = Cesium.Cartographic.fromCartesian(entity.position.getValue(Cesium.JulianDate.now()));
                 var latitude = Cesium.Math.toDegrees(cartographicPosition.latitude);
@@ -311,7 +306,7 @@
                 // Disable the labels to reduce clutter
 				// entity.label = undefined;
                 // Add distance display condition
-                entity.billboard.distanceDisplayCondition = new Cesium.DistanceDisplayCondition(10.0, 20000.0);
+                //entity.billboard.distanceDisplayCondition = new Cesium.DistanceDisplayCondition(10.0, 20000.0);
                 // Compute latitude and longitude in degrees
                 var cartographicPosition = Cesium.Cartographic.fromCartesian(entity.position.getValue(Cesium.JulianDate.now()));
                 var latitude = Cesium.Math.toDegrees(cartographicPosition.latitude);
