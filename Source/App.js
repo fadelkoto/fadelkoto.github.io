@@ -232,9 +232,9 @@
 
     // Set up clock and timeline.
     viewer.clock.shouldAnimate = true; // default
-    viewer.clock.startTime = Cesium.JulianDate.fromIso8601("2017-07-11T16:00:00Z");
-    viewer.clock.stopTime = Cesium.JulianDate.fromIso8601("2017-07-11T16:20:00Z");
-    viewer.clock.currentTime = Cesium.JulianDate.fromIso8601("2017-07-11T16:00:00Z");
+    viewer.clock.startTime = Cesium.JulianDate.fromIso8601("2020-07-23T11:00:00Z");
+    viewer.clock.stopTime = Cesium.JulianDate.fromIso8601("2020-07-23T11:20:00Z");
+    viewer.clock.currentTime = Cesium.JulianDate.fromIso8601("2020-07-23T11:00:00Z");
     viewer.clock.multiplier = 2; // sets a speedup
     viewer.clock.clockStep = Cesium.ClockStep.SYSTEM_CLOCK_MULTIPLIER; // tick computation mode
     viewer.clock.clockRange = Cesium.ClockRange.LOOP_STOP; // loop at the end
